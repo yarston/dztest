@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MainActivity</string>
+    <string name="app_name">DZ_Yaroslav</string>
+    <string name="dialog_label">Вход</string>
+    <string name="dialog_info">Войдите в свой Github аккаунт</string>
+    <string name="dialog_cancel">Отмена</string>
 </resources>
