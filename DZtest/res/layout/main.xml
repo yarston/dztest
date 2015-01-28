@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/head"
+        android:textColor="#FFFFFFFF"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="#FF9700"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <ImageView
+        android:id="@+id/iv"
+        android:src="@+drawable/logout"
+        android:scaleType="fitXY"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
     <ViewFlipper
         android:id="@+id/flipper"
+        android:paddingTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ListView

@@ -41,8 +41,9 @@ public class Get {
     private AsyncTask at;
     private Timer timer = new Timer();
     public long timeOut = 30000l;
-    private final static int ERRCODE_BADRESPONSE = 1;
-    private final static int ERRCODE_NOCONNECTION = 2;
+    private final static int ERRCODE_BADRESPONSE = 2;
+    private final static int ERRCODE_NOCONNECTION = 1;
+    private final static int ERRCODE_TIMEOUT = 3;
     private String pass;
     private String username;
     private String host;
@@ -102,9 +103,6 @@ public class Get {
                     HttpConnectionParams.setConnectionTimeout(httpParameters, 10000);
                     HttpConnectionParams.setSoTimeout(httpParameters, 10000);
                     DefaultHttpClient dhc = new DefaultHttpClient(httpParameters);
-                    if (username != null && pass != null) {
-                        dhc.getCredentialsProvider().setCredentials(new AuthScope(host, 443), new UsernamePasswordCredentials(username, pass));
-                    }
                     Log.v("!", "execute");
                     HttpResponse response = dhc.execute(httpget);
                     Log.v("!", "statuscode=" + response.getStatusLine());

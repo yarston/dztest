@@ -4,4 +4,8 @@
     <string name="dialog_label">Вход</string>
     <string name="dialog_info">Войдите в свой Github аккаунт</string>
     <string name="dialog_cancel">Отмена</string>
+    <string name="head_repo">Репозитории</string>
+    <string name="head_commits">Коммиты</string>
+    <string name="logout_label">Выход</string>
+    <string name="logout_info">Вы действительно хотите выйти?</string>
 </resources>
