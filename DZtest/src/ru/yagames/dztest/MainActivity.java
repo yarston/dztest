@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import static android.view.View.GONE;
@@ -58,6 +59,8 @@ public class MainActivity extends Activity {
     private TextView head;
     private final static String PREF_TOKEN = "token";
     private String token;
+    private CardView cv;
+   // private CardView cv;
 
     /**
      * Called when the activity is first created.
@@ -76,8 +79,10 @@ public class MainActivity extends Activity {
                 showDialog(2);
             }
         });
+        cv = new CardView(this);
         head = (TextView) findViewById(R.id.head);
         head.setText(R.string.head_repo);
+       // cv = new CardView(this);
         progressBar = (ProgressBar) findViewById(R.id.pbar);
         flipper = (ViewFlipper) findViewById(R.id.flipper);
         repoLV = (ListView) findViewById(R.id.repo_list);

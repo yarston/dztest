@@ -2,10 +2,10 @@ package ru.yagames.dztest;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
 
@@ -33,11 +33,11 @@ public class AdapterCommits extends ArrayAdapter<CommitModel> {
         }
         rowView.setTag(position);
         CommitModel m = objects.get(position);
-        LinearLayout ll = (LinearLayout) rowView;
-        ((TextView) ll.getChildAt(0)).setText(m.author);
-        ((TextView) ll.getChildAt(1)).setText(m.message);
-        ((TextView) ll.getChildAt(2)).setText(m.date.replaceAll("[TZ]", " "));
-        ((TextView) ll.getChildAt(3)).setText(m.hash);
+        CardView cv = (CardView) rowView;
+        ((TextView) cv.getChildAt(0)).setText(m.author);
+        ((TextView) cv.getChildAt(1)).setText(m.message);
+        ((TextView) cv.getChildAt(2)).setText(m.date.replaceAll("[TZ]", " "));
+        ((TextView) cv.getChildAt(3)).setText(m.hash);
         return rowView;
     }
 

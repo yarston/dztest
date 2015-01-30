@@ -2,6 +2,7 @@ package ru.yagames.dztest;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.MotionEvent;
 import static android.view.MotionEvent.ACTION_DOWN;
 import android.view.View;
@@ -48,12 +49,12 @@ public class AdapterRepos extends ArrayAdapter<RepoModel> {
         }
         rowView.setTag(position);
         RepoModel m = objects.get(position);
-        FrameLayout fl = (FrameLayout) rowView;
-        ImageProcessor.load(m.avatar, ((ImageView) fl.getChildAt(0)));
-        ((TextView) fl.getChildAt(1)).setText(m.name);
-        ((TextView) fl.getChildAt(2)).setText(m.owner);
-        ((TextView) fl.getChildAt(3)).setText(m.description);
-        LinearLayout ll = (LinearLayout) fl.getChildAt(4);
+        CardView cv = (CardView) rowView;
+        ImageProcessor.load(m.avatar, ((ImageView) cv.getChildAt(0)));
+        ((TextView) cv.getChildAt(1)).setText(m.name);
+        ((TextView) cv.getChildAt(2)).setText(m.owner);
+        ((TextView) cv.getChildAt(3)).setText(m.description);
+        LinearLayout ll = (LinearLayout) cv.getChildAt(4);
         ((TextView) ll.getChildAt(1)).setText(Integer.toString(m.forks));
         ((TextView) ll.getChildAt(3)).setText(Integer.toString(m.watches));
         return rowView;
