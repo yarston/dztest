@@ -6,6 +6,7 @@ import android.support.v7.widget.CardView;
 import android.view.MotionEvent;
 import static android.view.MotionEvent.ACTION_DOWN;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -30,14 +31,11 @@ public class AdapterRepos extends ArrayAdapter<RepoModel> {
         this.resource = resource;
         this.objects = objects;
     }
+    
+    private final OnClickListener ocl = new OnClickListener() {
 
-    private final View.OnTouchListener otl = new View.OnTouchListener() {
-
-        public boolean onTouch(View arg0, MotionEvent arg1) {
-            if (arg1.getAction() == ACTION_DOWN) {
-                ((MainActivity) context).showCommits((Integer) arg0.getTag());
-            }
-            return true;
+        public void onClick(View v) {
+            ((MainActivity) context).showCommits((Integer) v.getTag());
         }
     };
 
@@ -45,7 +43,7 @@ public class AdapterRepos extends ArrayAdapter<RepoModel> {
     public View getView(int position, View rowView, ViewGroup parent) {
         if (rowView == null) {
             rowView = context.getLayoutInflater().inflate(resource, parent, false);
-            rowView.setOnTouchListener(otl);
+            rowView.setOnClickListener(ocl);
         }
         rowView.setTag(position);
         RepoModel m = objects.get(position);

@@ -25,11 +25,19 @@ public class AdapterCommits extends ArrayAdapter<CommitModel> {
         this.resource = resource;
         this.objects = objects;
     }
+    
+     private final View.OnClickListener ocl = new View.OnClickListener() {
+
+        public void onClick(View v) {
+            //ничего)
+        }
+    };
 
     @Override
     public View getView(int position, View rowView, ViewGroup parent) {
         if (rowView == null) {
             rowView = context.getLayoutInflater().inflate(resource, parent, false);
+            rowView.setOnClickListener(ocl);
         }
         rowView.setTag(position);
         CommitModel m = objects.get(position);
